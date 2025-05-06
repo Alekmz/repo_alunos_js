@@ -4,7 +4,7 @@ while(multiplicador <= 5) {
     while(multiplicando <=10){
         let resultado = multiplicador * multiplicando
         alert("Taboada do: " + multiplicador + " Multiplicado por: " + multiplicando + " Resultado: " + resultado)
-        multiplicador++
+        multiplicando++
     }
-    multiplicando++
+    multiplicador++
 }
