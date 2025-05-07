@@ -1,3 +1,6 @@
+// 3. **Leitura de 3 senhas com tentativas**
+//     - O usuário tem até 3 tentativas para digitar a senha correta (ex: "1234").
+//     - Dentro de cada tentativa, verifique se a senha é igual e exiba mensagens.
 let senha = "Alex123"
 let tentativas = 1
 let acertou = false
