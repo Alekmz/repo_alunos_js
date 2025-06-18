@@ -121,3 +121,84 @@ function rotacionar(array) {
     return array; 
 }
 console.log(rotacionar(notas))
+//37. Conte as vogais em cada string de um array.
+
+function contarVogais(palavra) { 
+    return (palavra.match(/[aeiou]/gi) || []).length 
+}
+let meuarray = ['palavra', 'teste', 'oi']
+console.log(meuarray.map(palavra=> {
+    return {
+        palavra: palavra,
+        vogais: contarVogais(palavra)
+    }
+}))
+
+// 38. Gere um array com os 10 primeiros números pares.
+let pares = Array.from({length: 10}, (_, i) => i * 2);
+
+// 39. Gere um array com os quadrados dos números de 1 a 10.
+let quadrados = Array.from({length: 10}, (_, i) => (i+1) ** 2);
+
+// 40. Compare dois arrays e retorne os elementos que existem em ambos.
+let arr1 = ['teste', 'palavra', 'qualquer coisa']
+let arr2 = ['testando', 'teste', 'palavra', 'programação']
+let comuns = arr1.filter(e => arr2.includes(e));
+
+// 41. Faça um array de objetos com nome e nota, e filtre os aprovados (nota ≥ 7).
+let alunos = [{nome:'Ana',nota:8},{nome:'João',nota:5}]; 
+let aprovados = alunos.filter(a => a.nota >= 7);
+
+// 42. Crie uma função que embaralha os elementos de um array.
+let elementosArray = [3,5 ,5,3,2,6,2]
+function embaralhar(arr) { 
+    return arr.sort(() => Math.random() - 0.5); 
+}
+embaralhar(elementosArray)
+
+
+// 43. Verifique se um array está em ordem crescente.
+
+let arr = [1,2,3,4,5,6]
+let crescente = arr.every((v, i, a) => !i || a[i-1] <= v);
+
+// 44. Conte quantas strings têm mais de 5 letras em um array.
+let arrStrings = ['string1', 'alex', 'teste', 'paralelepipedo']
+let count = arr.filter(s => s.length > 5).length;
+
+// 45. Inverta as palavras de cada string de um array.
+
+let invertidas = arrStrings.map(p => p.split('').reverse().join(''));
+
+
+// 46. Crie um array com os dias da semana e exiba apenas os do fim de semana.
+let dias = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb']; 
+let fimSemana = dias.filter(d => d === 'Dom' || d === 'Sáb');
+
+// 47. Separe os números negativos e positivos de um array.
+let arrNumeros = [-2,4,50, -100, 34]
+let positivos = arrNumeros.filter(n => n >= 0); 
+let negativos = arrNumeros.filter(n => n < 0);
+
+
+// 48. Crie uma função que retorna o segundo maior número de um array.
+function segundoMaior(arr) { 
+    //set para remover os dados duplicados pessoal, sort com o b-a lembram? pra ordenar em order decrescente(do maior para o menor)
+    let s = [...new Set(arr)].sort((a,b)=>b-a); 
+    return s[1]; 
+}
+
+// 49. Conte quantas vezes cada letra aparece em um array de strings.
+let stringsArray = ['string1', 'alex', 'teste', 'paralelepipedo']
+
+let texto = stringsArray.join('').toLowerCase(); 
+let contagem = {}; 
+for (let l of texto) {
+    contagem[l] = (contagem[l]||0)+1;
+}
+
+// 50. Transforme um array de strings em um array de objetos com { valor: string,
+// tamanho: número de caracteres }.
+let stringsArray2 = ['string1', 'alex', 'teste', 'paralelepipedo']
+
+let objetos = stringsArray2.map(s => ({ valor: s, tamanho: s.length }));
